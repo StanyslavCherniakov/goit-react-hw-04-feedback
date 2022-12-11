@@ -7,7 +7,7 @@ export const Notification = ({ message }) => {
   return (
     <Wrapper>
       <Text>{message}</Text>
-      <TfiFaceSad />
+      <TfiFaceSad size='14px' />
     </Wrapper>
   );
 };
