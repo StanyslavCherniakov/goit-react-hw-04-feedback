@@ -7,6 +7,8 @@ export const Notification = ({ message }) => {
   );
 };
 
-Notification.propTypes = {};
+Notification.propTypes = {
+  message: PropTypes.string.isRequired,
+};
 
 
