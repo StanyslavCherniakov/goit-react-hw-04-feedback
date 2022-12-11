@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 export const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return <>
-    <p>Statistics</p>
     <span>Good: {good}</span>
     <span>Neutral: {neutral}</span>
     <span>Bad: {bad}</span>
@@ -21,7 +20,7 @@ Statistics.propTypes = {
   positivePercentage: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
-  ]),
+  ]).isRequired,
 };
 
 

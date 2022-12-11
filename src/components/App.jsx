@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Statistics } from './Statistics/Statistics';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
+import { Section } from './Section/Section';
 
 export class App extends Component {
 
@@ -47,23 +48,23 @@ export class App extends Component {
       this.countPositiveFeedbackPercentage(this.state) : '';
 
     return (<div>
-      <p>Please leave your feedback</p>
-      <button onClick={this.updateFeedback}>Good</button>
-      <button onClick={this.updateFeedback}>Neutral</button>
-      <button onClick={this.updateFeedback}>Bad</button>
-
-      <Statistics
-        good={good}
-        neutral={neutral}
-        bad={bad}
-        total={totalFeedback}
-        positivePercentage={positivePercentage} />
-
-    </div>);
+        <Section title='Please leave your feedback'>
+          <FeedbackOptions onLeaveFeedback={this.updateFeedback} />
+        </Section>
+        <Section title='Statistics'>
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={totalFeedback}
+            positivePercentage={positivePercentage} />
+        </Section>
+      </div>
+    )
+      ;
   }
 }
 
-// App.propTypes = {};
 
 
 
