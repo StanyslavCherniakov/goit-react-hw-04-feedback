@@ -3,6 +3,7 @@ import { Statistics } from './Statistics/Statistics';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Section } from './Section/Section';
 import { Notification } from './Notification/Notification';
+import { Box } from './Box';
 
 export class App extends Component {
 
@@ -48,7 +49,13 @@ export class App extends Component {
     const positivePercentage = this.countPositiveFeedbackPercentage(this.state) ?
       this.countPositiveFeedbackPercentage(this.state) : '';
 
-    return (<div>
+    return (<Box bg='#ead39c'
+                 width='300px'
+                 height='250px'
+                 mx='auto'
+                 p='16px'
+                 mt='30px'
+                 borderRadius='10px'>
         <Section title='Please leave your feedback'>
           <FeedbackOptions onLeaveFeedback={this.updateFeedback} />
         </Section>
@@ -62,8 +69,7 @@ export class App extends Component {
               positivePercentage={positivePercentage} /> :
             <Notification message='There is no feedback' />}
         </Section>
-
-      </div>
+      </Box>
     )
       ;
   }

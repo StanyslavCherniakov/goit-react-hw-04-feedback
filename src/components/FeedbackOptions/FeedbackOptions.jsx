@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { BadBtn, GoodBtn, NeutralBtn } from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({ onLeaveFeedback }) => {
   return (
-    <>
-      <button onClick={onLeaveFeedback}>Good</button>
-      <button onClick={onLeaveFeedback}>Neutral</button>
-      <button onClick={onLeaveFeedback}>Bad</button>
-    </>
+    <div>
+      <GoodBtn onClick={onLeaveFeedback}>Good</GoodBtn>
+      <NeutralBtn onClick={onLeaveFeedback}>Neutral</NeutralBtn>
+      <BadBtn onClick={onLeaveFeedback}>Bad</BadBtn>
+    </div>
   );
 };
 
