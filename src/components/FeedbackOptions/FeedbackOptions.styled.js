@@ -1,7 +1,37 @@
 import styled from 'styled-components';
 
-const Button = styled.button`
-  margin-right: 10px;
+export const ButtonList = styled.ul`
+  display: flex;
+`;
+
+const setMargin = (props) => {
+  switch (props.action) {
+    case 'good':
+      return '10px';
+    case 'neutral':
+      return '10px';
+    case 'bad':
+      return '0';
+    default:
+      return '10px';
+  }
+};
+
+const setBgColor = (props) => {
+  switch (props.action) {
+    case 'good':
+      return '#80ffa0';
+    case 'neutral':
+      return '#ebfffa';
+    case 'bad':
+      return '#ff3757';
+    default:
+      return '#fff';
+  }
+};
+
+export const Button = styled.button`
+  margin-right: ${setMargin};
   padding: 5px;
   min-width: 65px;
   border-radius: 5px;
@@ -10,21 +40,9 @@ const Button = styled.button`
   cursor: pointer;
   transition: transform 250ms linear;
 
+  background-color: ${setBgColor};
+
   :hover {
     transform: scale(110%);
   }
 `;
-
-export const GoodBtn = styled(Button)`
-  background-color: #80ffa0;
-`;
-
-export const NeutralBtn = styled(Button)`
-  background-color: #ebfffa;
-`;
-
-export const BadBtn = styled(Button)`
-  margin-right: 0;
-  background-color: #ff3757;
-`;
-
