@@ -25,6 +25,8 @@ export const App = () => {
       case 'bad':
         setBad(prState => prState + 1);
         break;
+      default:
+        console.log(`Error in type ${button}`);
     }
   };
 
